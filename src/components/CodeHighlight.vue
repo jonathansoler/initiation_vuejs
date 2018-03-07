@@ -65,7 +65,7 @@ export default {
 
 <style>
   pre {
-    font-size: 0.75em;
+    font-size: 0.65em;
     max-width: 60vw;
     max-height: 60vh;
   }

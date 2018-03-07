@@ -27,7 +27,7 @@ export default {
   }
 
   #titre {
-    min-height: 90vh;
+    min-height: 74vh;
     text-align: center;
   }
 

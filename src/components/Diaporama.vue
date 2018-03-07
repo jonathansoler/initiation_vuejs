@@ -64,9 +64,9 @@
         <h1 slot="titre">Les bases : Syntaxe</h1>
         <div slot="contenu1">
           <ul>
-            <li>liaison directive => v-bind Abréviation => :</li>
+            <li>liaison directive => v-bind (ou :)</li>
             <li>binding => v-model</li>
-            <li>Evènement => v-on Abréviation => @</li>
+            <li>Evènement => v-on (ou @)</li>
             <li>Similaire à Angular</li>
           </ul>
         </div>
@@ -110,40 +110,33 @@
           </ul>
         </div>
       </slide4>
-      <slide4 :courante="isCourante(getNumero('base5'))" :numero="getNumero('base5')" id="base5">
-        <h1 slot="titre">Les bases : Rendu conditionnel</h1>
+      <slide2 :courante="isCourante(getNumero('base5'))" :numero="getNumero('base5')" id="base5">
+        <h1 slot="titre">Les bases : les boucles</h1>
         <div slot="contenu1">
-          <ul>
-            <li>Les boucles</li>
-            <li>modificateur</li>
-          </ul>
+          <code-highlight src='./static/resources/boucle.html' class="code2"/>
+          <code-exemple src-js="./static/resources/boucle.js" src-html="./static/resources/boucle.html"/>
         </div>
         <div slot="contenu2">
-        <!--  <code-highlight src='./static/resources/base2.js' class="code1"/>
-          <code-highlight src='./static/resources/base2.html' class="code2"/>
-          <code-exemple src-js="./static/resources/base2.js" src-html="./static/resources/base2.html"/>-->
+          <code-highlight src='./static/resources/boucle.js' class="code1"/>
         </div>
-      </slide4>
+      </slide2>
       <slide4 :courante="isCourante(getNumero('base4'))" :numero="getNumero('base4')" id="base4">
         <h1 slot="titre">Les bases : Les propriétés calculées vs méthodes</h1>
         <div slot="titreColonne1">
-          <ul>
-            <li>Computed</li>
-          </ul>
         </div>
         <div slot="contenu1">
           <ul>
-            <li>Mise en cache du résultat</li>
-            <li>Rééveluée uniquement quand ses dépendances sont modifiée</li>
-            <li>Réévaluation seulement pour les dépendances réactives</li>
-            <li>Mutateur</li>
+            <li>Computed / Method</li>
+            <ul>
+              <li>Mise en cache du résultat</li>
+              <li>Rééveluée uniquement quand ses dépendances sont modifiée</li>
+              <li>Réévaluation seulement pour les dépendances réactives</li>
+              <li>Mutateur</li>
+            </ul>
           </ul>
           <code-exemple src-js="./static/resources/computed.js" src-html="./static/resources/computed.html"/>
         </div>
         <div slot="titreColonne2">
-          <ul>
-            <li>Methods</li>
-          </ul>
         </div>
         <div slot="contenu2">
           <!--<ul>
@@ -155,9 +148,10 @@
       <slide2 :courante="isCourante(getNumero('cycleDeVie'))" :numero="getNumero('cycleDeVie')" id="cycle-de-vie">
         <h1 slot="titre">Les bases : Cycle de vie</h1>
         <div slot="contenu1">
-          <img src="/static/img/lifecycle.png" />
+          <img src="/static/img/lifecycle1.png" />
         </div>
         <div slot="contenu2">
+          <img src="/static/img/lifecycle2.png" id="lifecycle2"/>
           <code-highlight src='./static/resources/cycle-de-vie.js' class="code1"/>
         </div>
       </slide2>
@@ -176,15 +170,29 @@
           <code-exemple src-js="./static/resources/reutilisabilite1.js" src-html="./static/resources/reutilisabilite1.html"/>
         </div>
       </slide2>
+      <slide2 :courante="isCourante(getNumero('reutilisabilite4'))" :numero="getNumero('reutilisabilite4')">
+        <h1 slot="titre">Les composants : validation des props</h1>
+        <div slot="contenu1">
+          <ul>
+            <li>Possibilité de valider les props</li>
+            <li>Typage fort</li>
+          </ul>
+        </div>
+        <div slot="contenu2">
+          <code-highlight src='./static/resources/validation-props.js' class="code1"/>
+        </div>
+      </slide2>
       <slide2 :courante="isCourante(getNumero('reutilisabilite2'))" :numero="getNumero('reutilisabilite2')">
         <h1 slot="titre">La notion de mixin</h1>
         <div slot="contenu1">
           <ul>
-            <li>Partage de fonction</li>
+            <li>Partage de fonctions</li>
             <li>Mixin global</li>
+            <li>Fusion des conflits</li>
           </ul>
         </div>
         <div slot="contenu2">
+          <code-highlight src='./static/resources/mixin.js' class="code1"/>
         </div>
       </slide2>
       <slide2 :courante="isCourante(getNumero('reutilisabilite3'))" :numero="getNumero('reutilisabilite3')">
@@ -215,6 +223,20 @@
         </div>
         <div slot="contenu2">
           <code-highlight src='./static/resources/test-unitaire.js' class="code1"/>
+        </div>
+      </slide2>
+      <slide2 :courante="isCourante(getNumero('modules'))" :numero="getNumero('modules')">
+        <h1 slot="titre">Quelques modules</h1>
+        <div slot="contenu1">
+          <ul>
+            <li>VueRouter</li>
+            <li>Vuex</li>
+            <li>Vue Awesome</li>
+          </ul>
+          <img src="/static/img/vue-awesome.png" />
+        </div>
+        <div slot="contenu2">
+          <code-highlight src='./static/resources/router.js' class="code1"/>
         </div>
       </slide2>
       <slide4 :courante="isCourante(getNumero('autreFramework'))" :numero="getNumero('autreFramework')" id="autreFramework">
@@ -251,20 +273,6 @@
           </div>
         </div>
       </slide4>
-      <slide2 :courante="isCourante(getNumero('modules'))" :numero="getNumero('modules')">
-        <h1 slot="titre">Quelques modules</h1>
-        <div slot="contenu1">
-          <ul>
-            <li>VueRouter</li>
-            <li>Vuex</li>
-            <li>Vue Awesome</li>
-          </ul>
-          <img src="/static/img/vue-awesome.png" />
-        </div>
-        <div slot="contenu2">
-          <code-highlight src='./static/resources/router.js' class="code1"/>
-        </div>
-      </slide2>
       <slide-title title="Merci pour votre attention" :courante="isCourante(getNumero('fin'))" :numero="getNumero('fin')"/>
     </div>
     <div id="footer">
@@ -309,13 +317,14 @@ export default {
     this.ordreDiapo.set('vuejs', this.nombreDiapo++)
     this.ordreDiapo.set('bienCommencer', this.nombreDiapo++)
     this.ordreDiapo.set('base1', this.nombreDiapo++)
+    this.ordreDiapo.set('cycleDeVie', this.nombreDiapo++)
     this.ordreDiapo.set('syntaxe', this.nombreDiapo++)
     this.ordreDiapo.set('base2', this.nombreDiapo++)
     this.ordreDiapo.set('base3', this.nombreDiapo++)
     this.ordreDiapo.set('base5', this.nombreDiapo++)
     this.ordreDiapo.set('base4', this.nombreDiapo++)
-    this.ordreDiapo.set('cycleDeVie', this.nombreDiapo++)
     this.ordreDiapo.set('reutilisabilite1', this.nombreDiapo++)
+    this.ordreDiapo.set('reutilisabilite4', this.nombreDiapo++)
     this.ordreDiapo.set('reutilisabilite2', this.nombreDiapo++)
     this.ordreDiapo.set('reutilisabilite3', this.nombreDiapo++)
     this.ordreDiapo.set('testUnitaire', this.nombreDiapo++)
@@ -405,5 +414,10 @@ export default {
   #cycle-de-vie img {
     max-height: 76vh;
     width: 91%;
+  }
+
+  #cycle-de-vie #lifecycle2 {
+    max-height: 35vh;
+    width: 70%;
   }
 </style>

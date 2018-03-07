@@ -47,11 +47,13 @@ export default {
 
   .slide .titre {
     min-height: 10vh;
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
   .slide .titre h1 {
     border-bottom: solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .slide .titre .preview{
@@ -62,7 +64,7 @@ export default {
     min-height: 70vh;
     /* display: table; */
     line-height: 1.5em;
-    font-size: 1.5em;
+    font-size: 2em;
     vertical-align: top;
   }
 
