@@ -1,6 +1,6 @@
 # pwa-vue-js
 
-> A Vue.js project
+> Une initiation de vue js
 
 ## Build Setup
 

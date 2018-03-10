@@ -9,7 +9,7 @@
       </slide-title>
       <slide1 :courante="isCourante(getNumero('sommaire'))" :numero="getNumero('sommaire')">
         <h1 slot="titre">Sommaire</h1>
-        <div slot="contenu">
+        <div slot="contenu" class="margin-top-10">
           <ul>
             <li>Euh, Vue.js, c'est quoi ?</li>
             <li>Pour bien commencer</li>
@@ -22,7 +22,7 @@
       </slide1>
       <slide1 :courante="isCourante(getNumero('vuejs'))" :numero="getNumero('vuejs')">
         <h1 slot="titre">Qu'est-ce-que Vue.js ?</h1>
-        <div slot="contenu">
+        <div slot="contenu" class="margin-top-10">
           <ul>
             <li>Créé par Evan You en 2014</li>
             <li>Framework Front</li>
@@ -34,7 +34,7 @@
       </slide1>
       <slide1 :courante="isCourante(getNumero('bienCommencer'))" :numero="getNumero('bienCommencer')">
         <h1 slot="titre">Bien commencer</h1>
-        <div slot="contenu">
+        <div slot="contenu" class="margin-top-10">
           <ul>
             <li>Analyser son besoin</li>
             <li>Simple fichier Javascript</li>
@@ -46,7 +46,7 @@
       </slide1>
       <slide2 :courante="isCourante(getNumero('base1'))" :numero="getNumero('base1')" id="base1">
         <h1 slot="titre">Les bases : Implementation simple</h1>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top-10">
           <ul>
             <li>Implementation basique</li>
             <li>Simple fichier Javascript</li>
@@ -62,7 +62,7 @@
       </slide2>
       <slide2 :courante="isCourante(getNumero('syntaxe'))" :numero="getNumero('syntaxe')" id="syntaxe">
         <h1 slot="titre">Les bases : Syntaxe</h1>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top-10">
           <ul>
             <li>liaison directive => v-bind (ou :)</li>
             <li>binding => v-model</li>
@@ -70,7 +70,7 @@
             <li>Similaire à Angular</li>
           </ul>
         </div>
-        <div slot="contenu2">
+        <div slot="contenu2" class="margin-top-10">
           <code-highlight src='./static/resources/syntaxe.html' class="code1"/>
         </div>
       </slide2>
@@ -85,7 +85,7 @@
           </ul>
           <code-highlight src='./static/resources/base2.js' class="code1"/>
         </div>
-        <div slot="contenu2">
+        <div slot="contenu2" class="margin-top-10">
           <code-highlight src='./static/resources/base2.html' class="code2"/>
           <code-exemple src-js="./static/resources/base2.js" src-html="./static/resources/base2.html"/>
         </div>
@@ -104,9 +104,12 @@
         <div slot="contenu2">
           <code-highlight src='./static/resources/show.html' class="code1"/>
           <ul>
-            <li>v-if => Vrai rendu conditionnel</li>
-            <li>v-show => Rendu CSS</li>
-            <li>v-show => permutation fréquente</li>
+            <li>v-if => Vrai rendu conditionnel</li><li>v-if => Vrai rendu conditionnel</li>
+            <li>v-show</li>
+            <ul>
+              <li>Rendu CSS</li>
+              <li>Permutation fréquente</li>
+            </ul>
           </ul>
         </div>
       </slide4>
@@ -116,14 +119,12 @@
           <code-highlight src='./static/resources/boucle.html' class="code2"/>
           <code-exemple src-js="./static/resources/boucle.js" src-html="./static/resources/boucle.html"/>
         </div>
-        <div slot="contenu2">
+        <div slot="contenu2" class="margin-top-10">
           <code-highlight src='./static/resources/boucle.js' class="code1"/>
         </div>
       </slide2>
-      <slide4 :courante="isCourante(getNumero('base4'))" :numero="getNumero('base4')" id="base4">
+      <slide2 :courante="isCourante(getNumero('base4'))" :numero="getNumero('base4')" id="base4">
         <h1 slot="titre">Les bases : Les propriétés calculées vs méthodes</h1>
-        <div slot="titreColonne1">
-        </div>
         <div slot="contenu1">
           <ul>
             <li>Computed / Method</li>
@@ -136,15 +137,10 @@
           </ul>
           <code-exemple src-js="./static/resources/computed.js" src-html="./static/resources/computed.html"/>
         </div>
-        <div slot="titreColonne2">
-        </div>
         <div slot="contenu2">
-          <!--<ul>
-            <li>Execution à chaque appel</li>
-          </ul>-->
           <code-highlight src='./static/resources/computed.js' class="code1"/>
         </div>
-      </slide4>
+      </slide2>
       <slide2 :courante="isCourante(getNumero('cycleDeVie'))" :numero="getNumero('cycleDeVie')" id="cycle-de-vie">
         <h1 slot="titre">Les bases : Cycle de vie</h1>
         <div slot="contenu1">
@@ -157,7 +153,7 @@
       </slide2>
       <slide2 :courante="isCourante(getNumero('reutilisabilite1'))" :numero="getNumero('reutilisabilite1')">
         <h1 slot="titre">Les composants</h1>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top-10">
           <ul>
             <li>Utilisation des props</li>
             <li>Les évènements</li>
@@ -172,7 +168,7 @@
       </slide2>
       <slide2 :courante="isCourante(getNumero('reutilisabilite4'))" :numero="getNumero('reutilisabilite4')">
         <h1 slot="titre">Les composants : validation des props</h1>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top-10">
           <ul>
             <li>Possibilité de valider les props</li>
             <li>Typage fort</li>
@@ -184,7 +180,7 @@
       </slide2>
       <slide2 :courante="isCourante(getNumero('reutilisabilite2'))" :numero="getNumero('reutilisabilite2')">
         <h1 slot="titre">La notion de mixin</h1>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top-10">
           <ul>
             <li>Partage de fonctions</li>
             <li>Mixin global</li>
@@ -197,7 +193,7 @@
       </slide2>
       <slide2 :courante="isCourante(getNumero('reutilisabilite3'))" :numero="getNumero('reutilisabilite3')">
         <h1 slot="titre">Les composants : Mono-fichier</h1>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top-10">
           <ul>
             <li>Utilisation d'un outil de build</li>
             <li>Coloration syntaxique du template</li>
@@ -212,7 +208,7 @@
       </slide2>
       <slide2 :courante="isCourante(getNumero('testUnitaire'))" :numero="getNumero('testUnitaire')">
         <h1 slot="titre">Les tests unitaires</h1>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top-10">
           <ul>
             <li>Fonctionnement basique</li>
             <li>Karma + jasmine</li>
@@ -221,13 +217,13 @@
             <img src="/static/img/karma-jasmine.png" />
           </div>
         </div>
-        <div slot="contenu2">
+        <div slot="contenu2" class="margin-top-10">
           <code-highlight src='./static/resources/test-unitaire.js' class="code1"/>
         </div>
       </slide2>
       <slide2 :courante="isCourante(getNumero('modules'))" :numero="getNumero('modules')">
         <h1 slot="titre">Quelques modules</h1>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top-10">
           <ul>
             <li>VueRouter</li>
             <li>Vuex</li>
@@ -273,12 +269,17 @@
           </div>
         </div>
       </slide4>
-      <slide-title title="Merci pour votre attention" :courante="isCourante(getNumero('fin'))" :numero="getNumero('fin')"/>
+      <slide-title title="Merci pour votre attention" :courante="isCourante(getNumero('fin'))" :numero="getNumero('fin')" id="fin">
+        <img src="/static/img/github-mark.png" />
+        <a href="https://github.com/jonathansoler/initiation_vuejs">https://github.com/jonathansoler/initiation_vuejs</a>
+      </slide-title>
     </div>
     <div id="footer">
       <span>Jonathan SOLER - Viseo Technologies</span>
       <input @click="$event.target.select()" @keyup.enter="changerDeDiapo(diapoCible)" v-model.number="diapoCible"/> / {{nombreDiapo - 1}}
     </div>
+    <div id="diapoPrecedente" @click="precedenteDiapo()" />
+    <div id="diapoSuivante" @click="prochaineDiapo()" />
   </div>
 </template>
 
@@ -419,5 +420,38 @@ export default {
   #cycle-de-vie #lifecycle2 {
     max-height: 35vh;
     width: 70%;
+  }
+
+  #fin {
+    text-align: center;
+  }
+
+  #fin img {
+    height: 100px;
+    width: 150px;
+    display: block;
+    margin: auto;
+  }
+
+  #diapoPrecedente, #diapoSuivante {
+    top: 0;
+    position: absolute;
+    height: 100vh;
+    width: 3vw;
+  }
+
+  #diapoPrecedente:hover, #diapoSuivante:hover {
+    cursor: pointer;
+    opacity: 0.2;
+    background: grey;
+  }
+
+  #diapoSuivante {
+    top: 0;
+    right: 0;
+  }
+
+  .margin-top-10 {
+    margin-top: 10vh;
   }
 </style>
