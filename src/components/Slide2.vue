@@ -1,5 +1,5 @@
 <template>
-  <slide :courante="courante">
+  <slide :courante="courante" :numero="numero" :maquette="maquette">
     <div class="titre">
       <slot name="titre">
         <div class="preview">

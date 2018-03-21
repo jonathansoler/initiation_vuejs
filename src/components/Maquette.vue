@@ -1,14 +1,10 @@
 <template>
   <div id="maquette">
-    <slide-title title="Initiation à Vue.js">
-    </slide-title>
-    <slide1>
-    </slide1>
-    <slide2>
-      <div slot="titre">Mon titre</div>
-    </slide2>
-    <slide3>
-    </slide3>
+    <slide-title title="Initiation à Vue.js" :maquette="true"/>
+    <slide1 :maquette="true"/>
+    <slide2 :maquette="true"/>
+    <slide3 :maquette="true"/>
+    <slide4 :maquette="true"/>
   </div>
 </template>
 
@@ -17,7 +13,7 @@ import SlideTitle from '@/components/SlideTitle.vue'
 import Slide1 from '@/components/Slide1.vue'
 import Slide2 from '@/components/Slide2.vue'
 import Slide3 from '@/components/Slide3.vue'
-import CodeHighlight from '@/components/CodeHighlight.vue'
+import Slide4 from '@/components/Slide4.vue'
 
 export default {
   name: 'maquette',
@@ -26,7 +22,7 @@ export default {
     slide1: Slide1,
     slide2: Slide2,
     slide3: Slide3,
-    codeHighlight: CodeHighlight
+    slide4: Slide4
   },
   data () {
     return {

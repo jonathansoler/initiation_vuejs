@@ -1,5 +1,5 @@
 <template>
-  <slide :courante="courante">
+  <slide :courante="courante" :numero="numero" :maquette="maquette">
     <div id="titre">
       <div>
         <h1>{{ title }}</h1>
@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
   #titre h1 {
-    font-size: 50px;
+    font-size: 4em;
   }
 
   #titre {

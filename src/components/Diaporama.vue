@@ -1,38 +1,37 @@
 <template>
   <div id="diaporama" tabindex="-1" @keyup.left="precedenteDiapo()" @keyup.right="prochaineDiapo()">
     <div id="corps">
-    <!--  <div id="logo"></div> -->
-      <slide-title title="Initiation à Vue.js" :courante="isCourante(getNumero('titre'))" :numero="getNumero('titre')">
+      <slide-title title="Initiation à Vue.js" :courante="diapoCourante" :numero="getNumero('titre')">
         <div>
           <img src="/static/img/logo.png" />
         </div>
       </slide-title>
-      <slide1 :courante="isCourante(getNumero('sommaire'))" :numero="getNumero('sommaire')">
+      <slide1 :courante="diapoCourante" :numero="getNumero('sommaire')">
         <h1 slot="titre">Sommaire</h1>
         <div slot="contenu" class="margin-top-10">
           <ul>
             <li>Euh, Vue.js, c'est quoi ?</li>
             <li>Pour bien commencer</li>
             <li>Les bases</li>
+            <li>Les composants</li>
             <li>Des modules utiles</li>
-            <li>Exemples d'applications</li>
-            <li>Quand l'utiliser ?</li>
+            <li>Et par rapport aux autres frameworks ?</li>
           </ul>
         </div>
       </slide1>
-      <slide1 :courante="isCourante(getNumero('vuejs'))" :numero="getNumero('vuejs')">
+      <slide1 :courante="diapoCourante" :numero="getNumero('vuejs')">
         <h1 slot="titre">Qu'est-ce-que Vue.js ?</h1>
         <div slot="contenu" class="margin-top-10">
           <ul>
             <li>Créé par Evan You en 2014</li>
-            <li>Framework Front</li>
+            <li>Framework Front-end</li>
             <li>Accessible, Polyvalent et Performant</li>
             <li>Très bonne documentation, en français s'il-vous-plait!</li>
             <li><a href="https://vuejs.org/v2/guide/">https://vuejs.org/v2/guide/</a></li>
           </ul>
         </div>
       </slide1>
-      <slide1 :courante="isCourante(getNumero('bienCommencer'))" :numero="getNumero('bienCommencer')">
+      <slide1 :courante="diapoCourante" :numero="getNumero('bienCommencer')">
         <h1 slot="titre">Bien commencer</h1>
         <div slot="contenu" class="margin-top-10">
           <ul>
@@ -44,7 +43,7 @@
           </ul>
         </div>
       </slide1>
-      <slide2 :courante="isCourante(getNumero('base1'))" :numero="getNumero('base1')" id="base1">
+      <slide2 :courante="diapoCourante" :numero="getNumero('base1')" id="base1">
         <h1 slot="titre">Les bases : Implementation simple</h1>
         <div slot="contenu1" class="margin-top-10">
           <ul>
@@ -60,7 +59,7 @@
           <code-exemple src-js="./static/resources/base1.js" src-html="./static/resources/base1.html"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('syntaxe'))" :numero="getNumero('syntaxe')" id="syntaxe">
+      <slide2 :courante="diapoCourante" :numero="getNumero('syntaxe')" id="syntaxe">
         <h1 slot="titre">Les bases : Syntaxe</h1>
         <div slot="contenu1" class="margin-top-10">
           <ul>
@@ -74,7 +73,7 @@
           <code-highlight src='./static/resources/syntaxe.html' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('base2'))" :numero="getNumero('base2')" id="base2">
+      <slide2 :courante="diapoCourante" :numero="getNumero('base2')" id="base2">
         <h1 slot="titre">Les bases : Data-binding</h1>
         <div slot="contenu1">
           <ul>
@@ -90,7 +89,7 @@
           <code-exemple src-js="./static/resources/base2.js" src-html="./static/resources/base2.html"/>
         </div>
       </slide2>
-      <slide4 :courante="isCourante(getNumero('base3'))" :numero="getNumero('base3')" id="base3">
+      <slide4 :courante="diapoCourante" :numero="getNumero('base3')" id="base3">
         <h1 slot="titre">Les bases : Rendu conditionnel</h1>
         <div slot="titreColonne1">
           v-if - v-else-if - v-else
@@ -113,7 +112,7 @@
           </ul>
         </div>
       </slide4>
-      <slide2 :courante="isCourante(getNumero('base5'))" :numero="getNumero('base5')" id="base5">
+      <slide2 :courante="diapoCourante" :numero="getNumero('base5')" id="base5">
         <h1 slot="titre">Les bases : les boucles</h1>
         <div slot="contenu1">
           <code-highlight src='./static/resources/boucle.html' class="code2"/>
@@ -123,14 +122,14 @@
           <code-highlight src='./static/resources/boucle.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('base4'))" :numero="getNumero('base4')" id="base4">
+      <slide2 :courante="diapoCourante" :numero="getNumero('base4')" id="base4">
         <h1 slot="titre">Les bases : Les propriétés calculées vs méthodes</h1>
         <div slot="contenu1">
           <ul>
             <li>Computed / Method</li>
             <ul>
               <li>Mise en cache du résultat</li>
-              <li>Rééveluée uniquement quand ses dépendances sont modifiée</li>
+              <li>Réévalué uniquement quand ses dépendances sont modifiées</li>
               <li>Réévaluation seulement pour les dépendances réactives</li>
               <li>Mutateur</li>
             </ul>
@@ -141,7 +140,7 @@
           <code-highlight src='./static/resources/computed.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('cycleDeVie'))" :numero="getNumero('cycleDeVie')" id="cycle-de-vie">
+      <slide2 :courante="diapoCourante" :numero="getNumero('cycleDeVie')" id="cycle-de-vie">
         <h1 slot="titre">Les bases : Cycle de vie</h1>
         <div slot="contenu1">
           <img src="/static/img/lifecycle1.png" />
@@ -151,7 +150,7 @@
           <code-highlight src='./static/resources/cycle-de-vie.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('reutilisabilite1'))" :numero="getNumero('reutilisabilite1')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite1')">
         <h1 slot="titre">Les composants</h1>
         <div slot="contenu1" class="margin-top-10">
           <ul>
@@ -166,7 +165,7 @@
           <code-exemple src-js="./static/resources/reutilisabilite1.js" src-html="./static/resources/reutilisabilite1.html"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('reutilisabilite4'))" :numero="getNumero('reutilisabilite4')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite4')">
         <h1 slot="titre">Les composants : validation des props</h1>
         <div slot="contenu1" class="margin-top-10">
           <ul>
@@ -178,7 +177,7 @@
           <code-highlight src='./static/resources/validation-props.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('reutilisabilite2'))" :numero="getNumero('reutilisabilite2')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite2')">
         <h1 slot="titre">La notion de mixin</h1>
         <div slot="contenu1" class="margin-top-10">
           <ul>
@@ -191,7 +190,7 @@
           <code-highlight src='./static/resources/mixin.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('reutilisabilite3'))" :numero="getNumero('reutilisabilite3')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite3')">
         <h1 slot="titre">Les composants : Mono-fichier</h1>
         <div slot="contenu1" class="margin-top-10">
           <ul>
@@ -206,7 +205,7 @@
           <code-highlight src='./static/resources/reutilisabilite3.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('testUnitaire'))" :numero="getNumero('testUnitaire')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('testUnitaire')">
         <h1 slot="titre">Les tests unitaires</h1>
         <div slot="contenu1" class="margin-top-10">
           <ul>
@@ -221,7 +220,7 @@
           <code-highlight src='./static/resources/test-unitaire.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="isCourante(getNumero('modules'))" :numero="getNumero('modules')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('modules')">
         <h1 slot="titre">Quelques modules</h1>
         <div slot="contenu1" class="margin-top-10">
           <ul>
@@ -235,7 +234,7 @@
           <code-highlight src='./static/resources/router.js' class="code1"/>
         </div>
       </slide2>
-      <slide4 :courante="isCourante(getNumero('autreFramework'))" :numero="getNumero('autreFramework')" id="autreFramework">
+      <slide4 :courante="diapoCourante" :numero="getNumero('autreFramework')" id="autreFramework">
         <h1 slot="titre">Et en comparaison aux autres framework ?</h1>
         <div slot="titreColonne1">
           <ul>
@@ -246,8 +245,8 @@
           <ul>
             <li>Syntaxe qui se rapproche</li>
             <li>Moins structuré, plus flexible</li>
+            <li>Typescript pas obligatoire</li>
             <li>Courbe d'apprentissage</li>
-            <li>Typescript pas nécessaire</li>
           </ul>
           <div class="img">
             <img src="/static/img/Angular.png"/>
@@ -261,7 +260,7 @@
         <div slot="contenu2">
           <ul>
             <li>Uniquement HTML, Javascript et CSS</li>
-            <li>Mise à jour des composant plus précis</li>
+            <li>Mise à jour des composants plus précis</li>
             <li>Courbe d'apprentissage</li>
           </ul>
           <div class="img">
@@ -269,7 +268,7 @@
           </div>
         </div>
       </slide4>
-      <slide-title title="Merci pour votre attention" :courante="isCourante(getNumero('fin'))" :numero="getNumero('fin')" id="fin">
+      <slide-title title="Merci pour votre attention" :courante="diapoCourante" :numero="getNumero('fin')" id="fin">
         <img src="/static/img/github-mark.png" />
         <a href="https://github.com/jonathansoler/initiation_vuejs">https://github.com/jonathansoler/initiation_vuejs</a>
       </slide-title>
@@ -312,7 +311,6 @@ export default {
     }
   },
   mounted: function () {
-    this.ordreDiapo = new Map()
     this.ordreDiapo.set('titre', this.nombreDiapo++)
     this.ordreDiapo.set('sommaire', this.nombreDiapo++)
     this.ordreDiapo.set('vuejs', this.nombreDiapo++)
@@ -353,9 +351,6 @@ export default {
       if (this.diapoCourante < this.ordreDiapo.size) {
         this.diapoCourante = this.diapoCourante + 1
       }
-    },
-    isCourante: function (numeroDiapo) {
-      return this.diapoCourante === numeroDiapo
     },
     changerDeDiapo: function (numero) {
       this.diapoCourante = numero
@@ -431,6 +426,10 @@ export default {
     width: 150px;
     display: block;
     margin: auto;
+  }
+
+  #fin a {
+    font-size: 1.5em;
   }
 
   #diapoPrecedente, #diapoSuivante {
