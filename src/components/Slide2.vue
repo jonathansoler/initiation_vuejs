@@ -38,9 +38,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #contenu1, #contenu2 {
-    /* max-width: 50vh; */
     width: 47%;
     float: left;
+    font-size: 4vmin;
   }
 
 </style>

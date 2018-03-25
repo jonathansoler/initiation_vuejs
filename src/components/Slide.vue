@@ -40,14 +40,14 @@ export default {
 <style>
   .slide {
     border: solid 1px black;
-    min-height: 100vh;
+    height: 100vh;
     background-image: url('/static/img/fond-diapo.png');
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
   }
 
   .slide div {
-    padding: 5px 10px 0px 10px;
+    padding: 1vh 1vw 0vh 1vw;
   }
 
   .slide .preview {
@@ -56,7 +56,11 @@ export default {
 
   .slide .titre {
     min-height: 10vh;
-    font-size: 2em;
+    font-size: 5.7vmin;
+  }
+
+  .slide .titre h1 {
+    font-size: 6.8vmin;
   }
 
   .slide .titre h1 {
@@ -70,9 +74,7 @@ export default {
   }
 
   .slide .contenu {
-    min-height: 70vh;
-    line-height: 1.5em;
-    font-size: 3em;
+    font-size: 4vmin;
     vertical-align: top;
   }
 

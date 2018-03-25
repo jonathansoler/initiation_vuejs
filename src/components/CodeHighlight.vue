@@ -65,8 +65,11 @@ export default {
 
 <style>
   pre {
-    font-size: 0.65em;
+    font-size: 2.5vmin;
     max-width: 60vw;
-    max-height: 60vh;
+  }
+
+  pre[class*="language-"] {
+    margin: 1vh 0;
   }
 </style>

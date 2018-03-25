@@ -1,14 +1,14 @@
 <template>
   <div id="diaporama" tabindex="-1" @keyup.left="precedenteDiapo()" @keyup.right="prochaineDiapo()">
     <div id="corps">
-      <slide-title title="Initiation à Vue.js" :courante="diapoCourante" :numero="getNumero('titre')">
+      <slide-title id="title" title="Initiation à Vue.js" :courante="diapoCourante" :numero="getNumero('titre')">
         <div>
           <img src="/static/img/logo.png" />
         </div>
       </slide-title>
       <slide1 :courante="diapoCourante" :numero="getNumero('sommaire')">
         <h1 slot="titre">Sommaire</h1>
-        <div slot="contenu" class="margin-top-10">
+        <div slot="contenu" class="margin-top">
           <ul>
             <li>Euh, Vue.js, c'est quoi ?</li>
             <li>Pour bien commencer</li>
@@ -21,19 +21,19 @@
       </slide1>
       <slide1 :courante="diapoCourante" :numero="getNumero('vuejs')">
         <h1 slot="titre">Qu'est-ce-que Vue.js ?</h1>
-        <div slot="contenu" class="margin-top-10">
+        <div slot="contenu" class="margin-top">
           <ul>
             <li>Créé par Evan You en 2014</li>
             <li>Framework Front-end</li>
             <li>Accessible, Polyvalent et Performant</li>
-            <li>Très bonne documentation, en français s'il-vous-plait!</li>
+            <li>Bonne documentation, en français s'il-vous-plait!</li>
             <li><a href="https://vuejs.org/v2/guide/">https://vuejs.org/v2/guide/</a></li>
           </ul>
         </div>
       </slide1>
       <slide1 :courante="diapoCourante" :numero="getNumero('bienCommencer')">
         <h1 slot="titre">Bien commencer</h1>
-        <div slot="contenu" class="margin-top-10">
+        <div slot="contenu" class="margin-top">
           <ul>
             <li>Analyser son besoin</li>
             <li>Simple fichier Javascript</li>
@@ -45,7 +45,7 @@
       </slide1>
       <slide2 :courante="diapoCourante" :numero="getNumero('base1')" id="base1">
         <h1 slot="titre">Les bases : Implementation simple</h1>
-        <div slot="contenu1" class="margin-top-10">
+        <div slot="contenu1" class="margin-top">
           <ul>
             <li>Implementation basique</li>
             <li>Simple fichier Javascript</li>
@@ -56,12 +56,12 @@
         <div slot="contenu2">
           <code-highlight src='./static/resources/base1.js' class="code1"/>
           <code-highlight src='./static/resources/base1.html' class="code2"/>
-          <code-exemple src-js="./static/resources/base1.js" src-html="./static/resources/base1.html"/>
+          <code-exemple src-js="./static/resources/base1.js" src-html="./static/resources/base1.html" class="exemple"/>
         </div>
       </slide2>
       <slide2 :courante="diapoCourante" :numero="getNumero('syntaxe')" id="syntaxe">
         <h1 slot="titre">Les bases : Syntaxe</h1>
-        <div slot="contenu1" class="margin-top-10">
+        <div slot="contenu1" class="margin-top">
           <ul>
             <li>liaison directive => v-bind (ou :)</li>
             <li>binding => v-model</li>
@@ -69,7 +69,7 @@
             <li>Similaire à Angular</li>
           </ul>
         </div>
-        <div slot="contenu2" class="margin-top-10">
+        <div slot="contenu2" class="margin-top">
           <code-highlight src='./static/resources/syntaxe.html' class="code1"/>
         </div>
       </slide2>
@@ -84,7 +84,7 @@
           </ul>
           <code-highlight src='./static/resources/base2.js' class="code1"/>
         </div>
-        <div slot="contenu2" class="margin-top-10">
+        <div slot="contenu2">
           <code-highlight src='./static/resources/base2.html' class="code2"/>
           <code-exemple src-js="./static/resources/base2.js" src-html="./static/resources/base2.html"/>
         </div>
@@ -94,13 +94,13 @@
         <div slot="titreColonne1">
           v-if - v-else-if - v-else
         </div>
-        <div slot="contenu1">
+        <div slot="contenu1" class="margin-top">
           <code-highlight src='./static/resources/if-else.html' class="code1"/>
         </div>
         <div slot="titreColonne2">
           v-show
         </div>
-        <div slot="contenu2">
+        <div slot="contenu2" class="margin-top">
           <code-highlight src='./static/resources/show.html' class="code1"/>
           <ul>
             <li>v-if => Vrai rendu conditionnel</li><li>v-if => Vrai rendu conditionnel</li>
@@ -118,12 +118,12 @@
           <code-highlight src='./static/resources/boucle.html' class="code2"/>
           <code-exemple src-js="./static/resources/boucle.js" src-html="./static/resources/boucle.html"/>
         </div>
-        <div slot="contenu2" class="margin-top-10">
+        <div slot="contenu2">
           <code-highlight src='./static/resources/boucle.js' class="code1"/>
         </div>
       </slide2>
       <slide2 :courante="diapoCourante" :numero="getNumero('base4')" id="base4">
-        <h1 slot="titre">Les bases : Les propriétés calculées vs méthodes</h1>
+        <h1 slot="titre">Propriétés calculées vs méthodes</h1>
         <div slot="contenu1">
           <ul>
             <li>Computed / Method</li>
@@ -152,7 +152,7 @@
       </slide2>
       <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite1')">
         <h1 slot="titre">Les composants</h1>
-        <div slot="contenu1" class="margin-top-10">
+        <div slot="contenu1" class="margin-top">
           <ul>
             <li>Utilisation des props</li>
             <li>Les évènements</li>
@@ -165,9 +165,9 @@
           <code-exemple src-js="./static/resources/reutilisabilite1.js" src-html="./static/resources/reutilisabilite1.html"/>
         </div>
       </slide2>
-      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite4')">
-        <h1 slot="titre">Les composants : validation des props</h1>
-        <div slot="contenu1" class="margin-top-10">
+      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite4')" id="reutilisabilite4">
+        <h1 slot="titre">Composants : validation des props</h1>
+        <div slot="contenu1" class="margin-top">
           <ul>
             <li>Possibilité de valider les props</li>
             <li>Typage fort</li>
@@ -177,9 +177,9 @@
           <code-highlight src='./static/resources/validation-props.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite2')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite2')" id="reutilisabilite2">
         <h1 slot="titre">La notion de mixin</h1>
-        <div slot="contenu1" class="margin-top-10">
+        <div slot="contenu1" class="margin-top">
           <ul>
             <li>Partage de fonctions</li>
             <li>Mixin global</li>
@@ -190,9 +190,9 @@
           <code-highlight src='./static/resources/mixin.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite3')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite3')" id="reutilisabilite3">
         <h1 slot="titre">Les composants : Mono-fichier</h1>
-        <div slot="contenu1" class="margin-top-10">
+        <div slot="contenu1" class="margin-top">
           <ul>
             <li>Utilisation d'un outil de build</li>
             <li>Coloration syntaxique du template</li>
@@ -200,14 +200,17 @@
             <li>Application Javascript avancée</li>
             <li>Un fichier .vue par composant</li>
           </ul>
+          <div class="img">
+            <img src="/static/img/vue-format.png"/>
+          </div>
         </div>
         <div slot="contenu2">
           <code-highlight src='./static/resources/reutilisabilite3.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="diapoCourante" :numero="getNumero('testUnitaire')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('testUnitaire')" id="testUnitaire">
         <h1 slot="titre">Les tests unitaires</h1>
-        <div slot="contenu1" class="margin-top-10">
+        <div slot="contenu1" class="margin-top">
           <ul>
             <li>Fonctionnement basique</li>
             <li>Karma + jasmine</li>
@@ -216,13 +219,13 @@
             <img src="/static/img/karma-jasmine.png" />
           </div>
         </div>
-        <div slot="contenu2" class="margin-top-10">
+        <div slot="contenu2" class="margin-top">
           <code-highlight src='./static/resources/test-unitaire.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="diapoCourante" :numero="getNumero('modules')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('modules')" id="modules">
         <h1 slot="titre">Quelques modules</h1>
-        <div slot="contenu1" class="margin-top-10">
+        <div slot="contenu1">
           <ul>
             <li>VueRouter</li>
             <li>Vuex</li>
@@ -235,8 +238,8 @@
         </div>
       </slide2>
       <slide4 :courante="diapoCourante" :numero="getNumero('autreFramework')" id="autreFramework">
-        <h1 slot="titre">Et en comparaison aux autres framework ?</h1>
-        <div slot="titreColonne1">
+        <h1 slot="titre">En comparaison aux autres framework ?</h1>
+        <div slot="titreColonne1" class="margin-top">
           <ul>
             <li>Angular</li>
           </ul>
@@ -252,7 +255,7 @@
             <img src="/static/img/Angular.png"/>
           </div>
         </div>
-        <div slot="titreColonne2">
+        <div slot="titreColonne2" class="margin-top">
           <ul>
             <li>React</li>
           </ul>
@@ -360,6 +363,11 @@ export default {
 </script>
 
 <style>
+  #title img {
+    width: 20vw;
+    height: 25vh;
+  }
+
   #logo {
     background: url('/static/img/viseo.jpg');
     background-size: auto;
@@ -385,26 +393,79 @@ export default {
     position: absolute;
     bottom: -2px;
     left: 35vw;
+    font-size: 2vmin;
   }
 
   #footer input {
-    width: 30px;
+    width: 1.9vw;
+    height: 2vh;
+    font-size: 2vmin;
+    text-align: center;
   }
 
   #base1 .code1 {
-    max-height: 40vh;
+    height: 28vh;
   }
 
   #base1 .code2 {
-    max-height: 20vh;
+    height: 10vh;
+  }
+
+  #base1 .exemple {
+    height: 14vh;
+  }
+
+  #base2 .code-exemple {
+    height: 32vh;
+    font-size: 4vmin;
+  }
+
+  #base2 .code-exemple input {
+    font-size: 4vmin;
+    width: 15vw;
+  }
+
+  #base2 .code-exemple label {
+    width: 11vw;
+    display: inline-block;
+  }
+
+  #base2 .code1 {
+    height: 32vh;
+  }
+
+  #base2 .code2 {
+    height: 20vh;
+  }
+
+  #base4 .code-exemple input {
+    font-size: 4vmin;
+  }
+
+  #base4 .code1 {
+    height: 68vh;
   }
 
   #autreFramework img {
     width: 150px;
   }
 
-  #autreFramework .img {
+  #autreFramework .img, #reutilisabilite3 .img {
     text-align: center;
+  }
+
+  #autreFramework ul {
+    margin-top: 1vh;
+    margin-bottom: 1.5vh;
+  }
+
+  #autreFramework img {
+    height: 15vh;
+    width: 15vw;
+  }
+
+  #cycle-de-vie .code1{
+    height: 30vh;
   }
 
   #cycle-de-vie img {
@@ -422,14 +483,18 @@ export default {
   }
 
   #fin img {
-    height: 100px;
-    width: 150px;
+    height: 10vh;
+    width: 10vw;
     display: block;
     margin: auto;
   }
 
   #fin a {
-    font-size: 1.5em;
+    font-size: 3vmin;
+  }
+
+  #fin h1 {
+    margin-top: 1vw;
   }
 
   #diapoPrecedente, #diapoSuivante {
@@ -450,7 +515,43 @@ export default {
     right: 0;
   }
 
-  .margin-top-10 {
-    margin-top: 10vh;
+  #testUnitaire img {
+    width: 35vw;
+    height: 20vh;
+  }
+
+  #modules img {
+    width: 40vw;
+    height: 35vh;
+  }
+
+  #modules .code1 {
+    height: 75vh;
+  }
+
+  #base3 .contenu .titre {
+    font-size: 5.5vmin;
+    font-weight: bold;
+  }
+
+  #reutilisabilite4 .code1 {
+    height: 75vh;
+  }
+
+  #reutilisabilite2 .code1 {
+    height: 75vh;
+  }
+
+  #reutilisabilite3 .code1 {
+    height: 75vh;
+  }
+
+  #reutilisabilite3 img {
+    height: 20vh;
+    width: 20vw;
+  }
+
+  .margin-top {
+    margin-top: 10vmin;
   }
 </style>

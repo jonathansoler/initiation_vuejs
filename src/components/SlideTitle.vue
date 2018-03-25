@@ -23,7 +23,7 @@ export default {
 
 <style scoped>
   #titre h1 {
-    font-size: 4em;
+    font-size: 10vmin;
   }
 
   #titre {
@@ -32,6 +32,6 @@ export default {
   }
 
   #titre:first-child {
-    margin-top: 25vh;
+    margin-top: 18vh;
   }
 </style>
