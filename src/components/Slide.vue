@@ -84,14 +84,15 @@ export default {
 
   /* Les animations d'entrée (« enter ») et de sortie (« leave »)  */
   /* peuvent utiliser différentes fonctions de durée et de temps.  */
-  .slide-fade-enter-active {
-    transition: all .3s ease;
+  .slide-fade-enter-active, .slide-fade-leave-active {
+    transition: all 1.2s ease;
   }
-  .slide-fade-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  .slide-fade-leave-to {
+    transform: rotateY(180deg);
+    opacity: 0;
   }
-  .slide-fade-enter, .slide-fade-leave-to {
-    transform: translateX(10px);
+  .slide-fade-enter {
+    transform: rotateY(-180deg);
     opacity: 0;
   }
 </style>

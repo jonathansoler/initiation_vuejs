@@ -47,7 +47,7 @@
         <h1 slot="titre">Les bases : Implementation simple</h1>
         <div slot="contenu1" class="margin-top">
           <ul>
-            <li>Implementation basique</li>
+            <li>Implémentation basique</li>
             <li>Simple fichier Javascript</li>
             <li>data-binding</li>
             <li>Intégration simple</li>
@@ -57,6 +57,16 @@
           <code-highlight src='./static/resources/base1.js' class="code1"/>
           <code-highlight src='./static/resources/base1.html' class="code2"/>
           <code-exemple src-js="./static/resources/base1.js" src-html="./static/resources/base1.html" class="exemple"/>
+        </div>
+      </slide2>
+      <slide2 :courante="diapoCourante" :numero="getNumero('cycleDeVie')" id="cycle-de-vie">
+        <h1 slot="titre">Les bases : Cycle de vie</h1>
+        <div slot="contenu1">
+          <img src="/static/img/lifecycle1.png" />
+        </div>
+        <div slot="contenu2">
+          <img src="/static/img/lifecycle2.png" id="lifecycle2"/>
+          <code-highlight src='./static/resources/cycle-de-vie.js' class="code1"/>
         </div>
       </slide2>
       <slide2 :courante="diapoCourante" :numero="getNumero('syntaxe')" id="syntaxe">
@@ -103,7 +113,7 @@
         <div slot="contenu2" class="margin-top">
           <code-highlight src='./static/resources/show.html' class="code1"/>
           <ul>
-            <li>v-if => Vrai rendu conditionnel</li><li>v-if => Vrai rendu conditionnel</li>
+            <li>v-if => Vrai rendu conditionnel</li>
             <li>v-show</li>
             <ul>
               <li>Rendu CSS</li>
@@ -138,16 +148,6 @@
         </div>
         <div slot="contenu2">
           <code-highlight src='./static/resources/computed.js' class="code1"/>
-        </div>
-      </slide2>
-      <slide2 :courante="diapoCourante" :numero="getNumero('cycleDeVie')" id="cycle-de-vie">
-        <h1 slot="titre">Les bases : Cycle de vie</h1>
-        <div slot="contenu1">
-          <img src="/static/img/lifecycle1.png" />
-        </div>
-        <div slot="contenu2">
-          <img src="/static/img/lifecycle2.png" id="lifecycle2"/>
-          <code-highlight src='./static/resources/cycle-de-vie.js' class="code1"/>
         </div>
       </slide2>
       <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite1')">
@@ -252,7 +252,7 @@
             <li>Courbe d'apprentissage</li>
           </ul>
           <div class="img">
-            <img src="/static/img/Angular.png"/>
+            <img src="/static/img/angular.png"/>
           </div>
         </div>
         <div slot="titreColonne2" class="margin-top">
@@ -422,11 +422,11 @@ export default {
 
   #base2 .code-exemple input {
     font-size: 4vmin;
-    width: 15vw;
+    width: 18vmin;
   }
 
   #base2 .code-exemple label {
-    width: 11vw;
+    width: 17vmin;
     display: inline-block;
   }
 
@@ -440,6 +440,7 @@ export default {
 
   #base4 .code-exemple input {
     font-size: 4vmin;
+      width: 15vw;
   }
 
   #base4 .code1 {
@@ -460,12 +461,13 @@ export default {
   }
 
   #autreFramework img {
-    height: 15vh;
+    height: 21vh;
     width: 15vw;
   }
 
-  #cycle-de-vie .code1{
-    height: 30vh;
+  #cycle-de-vie .code1 {
+    height: 22vmin;
+    font-size: 2vmin;
   }
 
   #cycle-de-vie img {
@@ -473,8 +475,12 @@ export default {
     width: 91%;
   }
 
+  #cycle-de-vie #contenu2 {
+    text-align: center;
+  }
+
   #cycle-de-vie #lifecycle2 {
-    max-height: 35vh;
+    max-height: 52vh;
     width: 70%;
   }
 
@@ -553,5 +559,17 @@ export default {
 
   .margin-top {
     margin-top: 10vmin;
+  }
+
+  ul {
+    padding-left: 3vmin;
+  }
+  li {
+    list-style-type: none;
+    background-image: url('/static/img/puce_liste.png');
+    background-size: 4vmin;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 4vmin;
   }
 </style>

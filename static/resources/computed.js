@@ -2,17 +2,17 @@ var vm2 = new Vue({
  name: 'exemple-computed',
  el: '#exemple-computed',
  data: {
-   chiffre1: 10,
-   chiffre2: 5
+   nom: 'Soler',
+   prenom: 'Jonathan'
  },
  computed: {
-   resultat: function () {
-     return this.chiffre1 + this.chiffre2
+   nomPrenom: function () {
+     return this.nom + ' ' + this.prenom
    }
  },
  methods: {
-   result: function () {
-     return this.chiffre1 + this.chiffre2
+   fullName: function () {
+     return this.nom + ' ' + this.prenom
    }
  }
 })

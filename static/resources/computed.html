@@ -1,5 +1,9 @@
 <div id="exemple-computed">
-  <input v-model.number="chiffre1" />
-  <input v-model.number="chiffre2" />
-  <p>Le résultat est {{ resultat }} ou {{ result() }}</p>
+  <div>
+    <label for="nom">Nom :</label><input id="nom" v-model="nom" />
+  </div>
+  <div>
+    <label for="prenom">Prenom :</label><input id="prenom" v-model="prenom" />
+  </div>
+  <div>{{ nomPrenom }}</div>
 </div>
