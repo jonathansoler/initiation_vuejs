@@ -151,14 +151,17 @@
           <code-highlight src='./static/resources/computed.js' class="code1"/>
         </div>
       </slide2>
-      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite1')">
+      <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite1')" id="reutilisabilite1">
         <h1 slot="titre">Les composants</h1>
-        <div slot="contenu1" class="margin-top">
+        <div slot="contenu1">
           <ul>
             <li>Utilisation des props</li>
             <li>Les évènements</li>
             <li>Les slots</li>
           </ul>
+          <div id="composant-event">
+            <img src='/static/img/props-events.png'/>
+          </div>
           <code-highlight src='./static/resources/reutilisabilite1.html' class="code2"/>
         </div>
         <div slot="contenu2">
@@ -193,7 +196,7 @@
       </slide2>
       <slide2 :courante="diapoCourante" :numero="getNumero('reutilisabilite3')" id="reutilisabilite3">
         <h1 slot="titre">Les composants : Mono-fichier</h1>
-        <div slot="contenu1" class="margin-top">
+        <div slot="contenu1" class="margin-top-7">
           <ul>
             <li>Utilisation d'un outil de build</li>
             <li>Coloration syntaxique du template</li>
@@ -280,7 +283,7 @@
             <li>Notions utilisées :</li>
             <ul>
               <li>vue-cli</li>
-              <li>VueRouter</li>
+              <li>Vue-router</li>
               <li>Composants</li>
               <li>Slot</li>
             </ul>
@@ -573,6 +576,10 @@ export default {
     margin-top: 10vmin;
   }
 
+  .margin-top-7 {
+    margin-top: 7vmin;
+  }
+
   #fin ul {
     font-size: 3vmin;
     display: inline-block;
@@ -593,5 +600,14 @@ export default {
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 4vmin;
+  }
+
+  #reutilisabilite1 #composant-event {
+    text-align: center;
+  }
+
+  #reutilisabilite1 img {
+    height: 25vh;
+    width: 20vw;
   }
 </style>
