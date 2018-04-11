@@ -14,16 +14,8 @@ Vue.component('validation', {
       type: Number,
       default: 100
     },
-    // les objets et tableaux par défaut doivent être retournés
-    // par une fabrique de fonctions
-    propE: {
-      type: Object,
-      default: function () {
-        return { message: 'hello' }
-      }
-    },
     // fonction de validation personnalisée
-    propF: {
+    propE: {
       validator: function (value) {
         return value > 10
       }

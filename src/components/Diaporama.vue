@@ -24,6 +24,7 @@
         <div slot="contenu" class="margin-top">
           <ul>
             <li>Créé par Evan You en 2014</li>
+            <li>Large support de la communauté</li>
             <li>Framework Front-end</li>
             <li>Accessible, Polyvalent et Performant</li>
             <li>Bonne documentation, en français s'il-vous-plait!</li>
@@ -36,7 +37,7 @@
         <div slot="contenu" class="margin-top">
           <ul>
             <li>Analyser son besoin</li>
-            <li>Simple fichier Javascript</li>
+            <li>Simple fichier Javascript ou application Single Page</li>
             <li>Outils de génération de projet</li>
             <li>Outil de build</li>
             <li>TypeScript</li>
@@ -170,7 +171,7 @@
         <div slot="contenu1" class="margin-top">
           <ul>
             <li>Possibilité de valider les props</li>
-            <li>Typage fort</li>
+            <li>Typage</li>
           </ul>
         </div>
         <div slot="contenu2">
@@ -230,6 +231,7 @@
             <li>VueRouter</li>
             <li>Vuex</li>
             <li>Vue Awesome</li>
+            <li>Vuetify</li>
           </ul>
           <img src="/static/img/vue-awesome.png" />
         </div>
@@ -248,7 +250,6 @@
           <ul>
             <li>Syntaxe qui se rapproche</li>
             <li>Moins structuré, plus flexible</li>
-            <li>Typescript pas obligatoire</li>
             <li>Courbe d'apprentissage</li>
           </ul>
           <div class="img">
@@ -274,6 +275,17 @@
       <slide-title title="Merci pour votre attention" :courante="diapoCourante" :numero="getNumero('fin')" id="fin">
         <img src="/static/img/github-mark.png" />
         <a href="https://github.com/jonathansoler/initiation_vuejs">https://github.com/jonathansoler/initiation_vuejs</a>
+        <div id="notion">
+          <ul>
+            <li>Notions utilisées :</li>
+            <ul>
+              <li>vue-cli</li>
+              <li>VueRouter</li>
+              <li>Composants</li>
+              <li>Slot</li>
+            </ul>
+          </ul>
+        </div>
       </slide-title>
     </div>
     <div id="footer">
@@ -342,7 +354,7 @@ export default {
     }
   },
   methods: {
-    getNumero: function (nom) {
+    getNumero (nom) {
       return this.ordreDiapo.get(nom)
     },
     precedenteDiapo: function () {
@@ -408,11 +420,11 @@ export default {
   }
 
   #base1 .code2 {
-    height: 10vh;
+    height: 18vh;
   }
 
   #base1 .exemple {
-    height: 14vh;
+    height: 13vh;
   }
 
   #base2 .code-exemple {
@@ -559,6 +571,16 @@ export default {
 
   .margin-top {
     margin-top: 10vmin;
+  }
+
+  #fin ul {
+    font-size: 3vmin;
+    display: inline-block;
+    text-align: left;
+  }
+
+  #fin #notion {
+    text-align: right;
   }
 
   ul {

@@ -1,9 +1,9 @@
 Vue.component('mon-composant', {
-  template: '<div>\
-  Bienvenue {{ prenom }} {{ nom }}.\
-  <slot name="slot1">Slot 1</slot>\
-  <slot name="slot2">Slot 2</slot>\
-  </div>',
+  template: `<div>
+              Bienvenue {{ prenom }} {{ nom }}.
+              <slot name="slot1">Slot 1</slot>
+              <slot name="slot2">Slot 2</slot>
+              </div>`,
   props: {
     prenom: null,
     nom: null
